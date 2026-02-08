@@ -8,8 +8,7 @@ class ClsString
 {
 private :
 	string _Value;
-	enum _encountletter { CountCapitalLetter = 1, CountSmallletter = 2, Countall = 3 };
-	enum _enTirm {tirmleft =1 , tirmRight =2 , tirmall=3};
+	
 	static char _Invertlettercase(char Letter)
 	{
 		return isupper(Letter) ? tolower(Letter) : toupper(Letter);
@@ -74,7 +73,8 @@ private :
 		return TrimLeft(TrimRight(S1));
 	}
 public :
-
+enum _encountletter { CountCapitalLetter = 1, CountSmallletter = 2, Countall = 3 };
+	enum _enTirm {tirmleft =1 , tirmRight =2 , tirmall=3};
 	ClsString()
 	{
 		_Value = "";
@@ -367,10 +367,12 @@ public :
 		string Sward = "";
 		while (iter != Vsplit.begin())
 		{
-			Sward += *iter;
 			iter--;
+			Sward += *iter+" ";
+		
 
 		}
+			return Sward;
 	}
 	string ReverseString()
 	{
@@ -413,4 +415,5 @@ public :
 	}
 
 };
+
 
